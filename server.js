@@ -16,13 +16,8 @@ var Movie = require('./Movies');
 var Review = require('./Reviews');
 var mongoose = require('mongoose');
 //extra credit section=================================
-var express = require('express');
-var bodyParser = require('body-parser');
 const crypto = require("crypto");
 var rp = require('request-promise');
-var app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 
 var router = express.Router();
 
@@ -327,6 +322,38 @@ router.put('/Movies/:id', authJwtController.isAuthenticated, async (req, res) =>
         console.error(err);
         res.status(500).json({ success: false, message: 'Failed to update movie.' });
     }
+
+//extra credit section============================================================================================================
+    // Inside your router.post('/Reviews', ...) after saving the review:
+newReview.save(function(err, savedReview) {
+    if (err) {
+        return res.status(500).json({ success: false, msg: 'Error saving review', error: err });
+    }
+
+    // ==== Extra Credit Tracking ====
+    // We send genre as category (if available), otherwise "Movie"
+    Movie.findById(movieId, function(err, movie) {
+        if (movie) {
+            const movieTitle = movie.title;
+            const genre = movie.genre || "Movie"; // assuming you have a genre field, or default
+            const path = req.originalUrl;
+
+            trackDimension(
+                genre,                   // Event Category: Movie Genre
+                `POST ${path}`,         // Event Action: Url Path
+                'API Request for Movie Review', // Event Label
+                '1',                    // Event Value
+                movieTitle,             // Custom Dimension: Movie Name
+                '1'                     // Custom Metric: Count
+            );
+        }
+    });
+    // ===============================
+
+    res.status(201).json({ success: true, review: savedReview });
+});
+//================================================================================================================================
+
   });
   
   // DELETE a movie by ID
