@@ -15,6 +15,7 @@ var User = require('./Users');
 var Movie = require('./Movies');
 var Review = require('./Reviews');
 var mongoose = require('mongoose');
+const GA_TRACKING_ID = process.env.GA_KEY; // for the extra credit
 
 var app = express();
 app.use(cors());
@@ -31,12 +32,14 @@ const mongoURI = 'mongodb+srv://test:pass@assignment4.8abualg.mongodb.net/?retry
 // Connect to MongoDB using Mongoose
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => {
-    console.log('MongoDB connected successfully');
-}).catch((err) => {
-    console.log('MongoDB connection error: ', err);
-});
+    useUnifiedTopology: true,
+  })
+    .then(() => {
+      console.log('MongoDB connected');
+    })
+    .catch((err) => {
+      console.error('MongoDB connection error:', err);
+    });
 
 function getJSONObjectForMovieRequirement(req) {
     var json = {
