@@ -1,24 +1,24 @@
 {
-  "name": "csc3916_hw4",
+  "name": "csc3916_hw3",
   "version": "1.0.0",
-  "description": "Web API 3916 Homework 4",
+  "description": "Web API 3916 Homework 3",
   "main": "server.js",
   "scripts": {
     "test": "mocha --timeout 10000 --exit"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/I-Code777/CSCI3916_A4.git"
+    "url": "git+https://github.com/shawnmccarthy/CSC3916_HW3.git"
   },
   "keywords": [
     "Movie"
   ],
-  "author": "Jessica Nguyen",
+  "author": "Shawn McCarthy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/I-Code777/CSCI3916_A4/issues"
+    "url": "https://github.com/shawnmccarthy/CSC3916_HW3/issues"
   },
-  "homepage": "https://github.com/I-Code777/CSCI3916_A4#readme",
+  "homepage": "https://github.com/shawnmccarthy/CSC3916_HW3#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.19.0",
