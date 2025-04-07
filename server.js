@@ -26,7 +26,7 @@ app.use(passport.initialize());
 var router = express.Router();
 
 //MongoDB URL
-const mongoURI = "mongodb+srv://jessican101800:<db_password>@assignment4.8abualg.mongodb.net/";
+const mongoURI = "mongodb+srv://jessican101800:pass@assignment4.8abualg.mongodb.net/?retryWrites=true&w=majority&appName=Assignment4";
 
 // Connect to MongoDB using Mongoose
 mongoose.connect(mongoURI, {
