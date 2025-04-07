@@ -14,6 +14,7 @@ var cors = require('cors');
 var User = require('./Users');
 var Movie = require('./Movies');
 var Review = require('./Reviews');
+var mongoose = require('mongoose');
 
 var app = express();
 app.use(cors());
@@ -23,6 +24,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
 
 var router = express.Router();
+
+
+//MongoDB URL
+const mongoURI = process.env.MONGO_URI;
+
+// Connect to MongoDB using Mongoose
+mongoose.connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log('MongoDB connected successfully');
+}).catch((err) => {
+    console.log('MongoDB connection error: ', err);
+});
 
 function getJSONObjectForMovieRequirement(req) {
     var json = {
