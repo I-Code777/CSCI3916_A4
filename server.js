@@ -15,6 +15,8 @@ var User = require('./Users');
 var Movie = require('./Movies');
 var Review = require('./Reviews');
 var mongoose = require('mongoose');
+var dotenv = require('dotenv');
+dotenv.config();
 
 var app = express();
 app.use(cors());
@@ -24,7 +26,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
 
 var router = express.Router();
-
 
 //MongoDB URL
 const mongoURI = process.env.MONGO_URI;
