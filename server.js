@@ -15,8 +15,6 @@ var User = require('./Users');
 var Movie = require('./Movies');
 var Review = require('./Reviews');
 var mongoose = require('mongoose');
-var dotenv = require('dotenv');
-dotenv.config();
 
 var app = express();
 app.use(cors());
@@ -28,7 +26,7 @@ app.use(passport.initialize());
 var router = express.Router();
 
 //MongoDB URL
-const mongoURI = process.env.MONGO_URI;
+const mongoURI = "mongodb+srv://jessican101800:pass@assignment4.8abualg.mongodb.net/?retryWrites=true&w=majority&appName=Assignment4";
 
 // Connect to MongoDB using Mongoose
 mongoose.connect(mongoURI, {
