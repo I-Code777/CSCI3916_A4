@@ -11,7 +11,21 @@ Leverage the Async.js library or mongo $lookup aggregation capability to join th
 ## Things of Note
 
 -Unable to get my mongoDB to connect (Still in the process of trying to fix this even after submission)
-    Error Thrown by Render: 
+    Error Thrown by Render: MongooseError: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+    -Steps I've taken to try and resolve the error:
+        1. Created an .env file to house the following code segment:
+            MONGO_URI=mongodb+srv://jessican101800:pass@assignment4.8abualg.mongodb.net/?retryWrites=true&w=majority&appName=Assignment4
+            SECRET_KEY=0658db4c9206c90852fc7b20054afe7d
+            **Result**: Failed
+        2. Hardcoded URL into Server.js
+            **Result**: Failed
+        3. Scrapped the cluster on MongoDB and recreated it
+            **Result**: Failed
+        4. Scrapped entire MongoDB project and recreated it
+            **Result**: Failed
+
+-Due to errors with the mongoDB connection, Postman has been effected in some parts for me. Oddly enough, the POST and GET requests work for me, but any other throws a 502 error.
+
 -I made a copy of each of the requests into my assignment 4 postman and also created a replacement cluster for the Movies database, my previous one started to cause issues that I couldn't fix or identify it since it kept throwing a red error box saying "an error has occured."
 
 ## Postman Button
