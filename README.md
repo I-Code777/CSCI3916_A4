@@ -23,6 +23,7 @@ Leverage the Async.js library or mongo $lookup aggregation capability to join th
             **Result**: Failed
         4. Scrapped entire MongoDB project and recreated it
             **Result**: Failed
+        5. Refered back to the recording for assignment 3 for MongoDB set up, everything was accounted for, no issues on the MongoDB side.
 
 -Due to errors with the mongoDB connection, Postman has been effected in some parts for me. Oddly enough, the POST and GET requests work for me, but any other throws a 502 error.
 
