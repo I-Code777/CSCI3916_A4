@@ -29,3 +29,4 @@ Leverage the Async.js library or mongo $lookup aggregation capability to join th
 -I made a copy of each of the requests into my assignment 4 postman and also created a replacement cluster for the Movies database, my previous one started to cause issues that I couldn't fix or identify it since it kept throwing a red error box saying "an error has occured."
 
 ## Postman Button
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://app.getpostman.com/run-collection/41738051-2b6367df-8513-4f3f-9b84-cccd798b3227?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D41738051-2b6367df-8513-4f3f-9b84-cccd798b3227%26entityType%3Dcollection%26workspaceId%3Da4250de4-ab16-4e10-864c-e1bf56c53dd0)
