@@ -100,6 +100,7 @@ function trackDimension(category, action, label, value, dimension, metric) {
     return rp(options);
 }
 
+//extra Credit section========================================================================================================================
 router.route('/test')
     .get(function (req, res) {
         // Event value must be numeric.
@@ -324,7 +325,6 @@ router.put('/Movies/:id', authJwtController.isAuthenticated, async (req, res) =>
     }
 
 //extra credit section============================================================================================================
-    // Inside your router.post('/Reviews', ...) after saving the review:
 newReview.save(function(err, savedReview) {
     if (err) {
         return res.status(500).json({ success: false, msg: 'Error saving review', error: err });
